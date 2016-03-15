@@ -1,7 +1,7 @@
 package hu.thsoft.firebase
 
 import scala.scalajs.js
-import scala.scalajs.js.Promise
+import js.Promise
 import js.annotation._
 import js.|
 
@@ -43,8 +43,8 @@ trait FirebaseOnDisconnect extends js.Object {
 
 @js.native
 trait FirebaseQuery extends js.Object {
-  def on(eventType: String, callback: js.Function2[FirebaseDataSnapshot, String, Unit], cancelCallback: js.Function1[js.Any, Unit] = ???, context: Object = ???): js.Function2[FirebaseDataSnapshot, String, Unit] = js.native
-  def off(eventType: String = ???, callback: js.Function2[FirebaseDataSnapshot, String, Unit] = ???, context: Object = ???): Unit = js.native
+  def on(eventType: String, callback: js.Function2[FirebaseDataSnapshot, js.UndefOr[String], Unit], cancelCallback: js.Function1[js.Any, Unit] = ???, context: Object = ???): js.Function2[FirebaseDataSnapshot, String, Unit] = js.native
+  def off(eventType: String = ???, callback: js.Function2[FirebaseDataSnapshot, js.UndefOr[String], Unit] = ???, context: Object = ???): Unit = js.native
   def once(eventType: String, successCallback: js.Function1[FirebaseDataSnapshot, Unit]): Unit = js.native
   def once(eventType: String, successCallback: js.Function1[FirebaseDataSnapshot, Unit], context: Object): Unit = js.native
   def once(eventType: String, successCallback: js.Function1[FirebaseDataSnapshot, Unit], failureCallback: js.Function1[js.Any, Unit], context: Object = ???): Unit = js.native
@@ -62,7 +62,7 @@ trait FirebaseQuery extends js.Object {
 }
 
 @js.native
-trait Firebase extends FirebaseQuery {
+class Firebase(firebaseURL: String) extends FirebaseQuery {
   def auth(authToken: String, onComplete: js.Function2[js.Any, FirebaseAuthResult, Unit], onCancel: js.Function1[js.Any, Unit] = ???): Unit = js.native
   def auth(authToken: String): Promise[FirebaseAuthResult] = js.native
   def authWithCustomToken(autoToken: String): Promise[FirebaseAuthData] = js.native
@@ -118,7 +118,7 @@ trait FirebaseStatic extends js.Object {
 /* ??? ConstructorMember(FunSignature(List(),List(FunParam(Ident(firebaseURL),false,Some(TypeRef(CoreType(string),List())))),Some(TypeRef(TypeName(Firebase),List())))) */
   def goOffline(): Unit = js.native
   def goOnline(): Unit = js.native
-  var ServerValue: js.Any = js.native
+  var ServerValue: { def TIMESTAMP: js.Any; } = js.native
 }
 
 @js.native
