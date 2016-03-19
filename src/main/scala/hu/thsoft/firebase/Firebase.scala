@@ -43,7 +43,7 @@ trait FirebaseOnDisconnect extends js.Object {
 
 @js.native
 trait FirebaseQuery extends js.Object {
-  def on(eventType: String, callback: js.Function2[FirebaseDataSnapshot, js.UndefOr[String], Unit], cancelCallback: js.Function1[js.Any, Unit] = ???, context: Object = ???): js.Function2[FirebaseDataSnapshot, String, Unit] = js.native
+  def on(eventType: String, callback: js.Function2[FirebaseDataSnapshot, js.UndefOr[String], Unit], cancelCallback: js.Function1[js.Any, Unit] = ???, context: Object = ???): js.Function2[FirebaseDataSnapshot, js.UndefOr[String], Unit] = js.native
   def off(eventType: String = ???, callback: js.Function2[FirebaseDataSnapshot, js.UndefOr[String], Unit] = ???, context: Object = ???): Unit = js.native
   def once(eventType: String, successCallback: js.Function1[FirebaseDataSnapshot, Unit]): Unit = js.native
   def once(eventType: String, successCallback: js.Function1[FirebaseDataSnapshot, Unit], context: Object): Unit = js.native
