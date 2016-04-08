@@ -9,7 +9,7 @@ version := "2.4.1"
 
 organization := "hu.thsoft"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 jsDependencies += "org.webjars.bower" % "firebase" % "2.4.1" / "firebase.js"
 
