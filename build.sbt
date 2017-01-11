@@ -5,13 +5,13 @@ name := "Firebase-Scalajs-Facade"
 
 normalizedName := "firebase-scalajs"
 
-version := "2.4.1"
+version := "3.6.4"
 
 organization := "hu.thsoft"
 
 scalaVersion := "2.11.8"
 
-jsDependencies += "org.webjars.bower" % "firebase" % "2.4.1" / "firebase.js"
+jsDependencies += "org.webjars" % "firebase" % "3.6.4" / "firebase.js"
 
 licenses += ("MIT License", url("http://www.opensource.org/licenses/mit-license.php"))
 
@@ -31,5 +31,7 @@ publishTo := {
   else
     Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
+
+credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
 
 pomIncludeRepository := { _ => false }
